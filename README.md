@@ -1,2 +1,2 @@
 # javascript-beginning
-jajascript basics tutorial 
+javascript basics tutorial 
