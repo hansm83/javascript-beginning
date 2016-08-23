@@ -27,6 +27,12 @@
 		return node.nodeType === 1;
 	}
 
+	// checkError 
+	function checkError(message) {
+		validateData(message, 'string');
+		throw new Error(message);
+	}
+
 	// each
 	var each = (function(){
 		if ( Array.prototype.forEach ) {
@@ -370,6 +376,82 @@
 		addClass(el, class_name);
 	}
 
+	// on
+	var on = (function(){
+		var _on;
+		// 진보 이벤트 모델 W3C, IE 9
+		if (global.addEventListener) {
+			_on = function(el_node, event_type, event_handler, capture){
+				//capture 초기 값 설정
+				capture = capture || false;
+				// 전달인자 검증
+				if (!isElNode(el_node)) { checkError('전달된 인자는 요소노드여야 합니다.');}
+				if (type(event_type) !== 'string') { checkError('전달된 2번째 인자는 텍스트 유형이어야 합니다.');}
+				if (type(event_handler) !== 'function') { checkError('전달된 3번째 인자는 함수 유형이어야 합니다.');}
+				el_node.addEventListener(event_type, event_handler, capture);
+			};
+		}
+		// 진보 이벤트 모델 MS IE 6-8
+		else if (global.attachEvent) {
+			_on = function(el_node, event_type, event_handler){
+				// 전달인자 검증
+				if (!isElNode(el_node)) { checkError('전달된 인자는 요소노드여야 합니다.');}
+				if (type(event_type) !== 'string') { checkError('전달된 2번째 인자는 텍스트 유형이어야 합니다.');}
+				if (type(event_handler) !== 'function') { checkError('전달된 3번째 인자는 함수 유형이어야 합니다.');}
+				el_node.attachEvent('on'+event_type, event_handler);
+			};
+		}
+		// 구형 이벤트 모델 
+		else {
+			_on = function(el_node, event_type, event_handler) {
+				// 전달인자 검증
+				if (!isElNode(el_node)) { checkError('전달된 인자는 요소노드여야 합니다.');}
+				if (type(event_type) !== 'string') { checkError('전달된 2번째 인자는 텍스트 유형이어야 합니다.');}
+				if (type(event_handler) !== 'function') { checkError('전달된 3번째 인자는 함수 유형이어야 합니다.');}
+				el_node['on'+event_type] = event_handler;
+			};
+		}
+		return _on;
+	})();
+
+	// off
+	var off = (function(){
+		var _off;
+		// 진보 이벤트 모델 W3C, IE 9
+		if (global.removeEventListener) {
+			_off = function(el_node, event_type, event_handler, capture){
+				//capture 초기 값 설정
+				capture = type(capture) === 'undefined'? false : true;
+				// 전달인자 검증
+				if (!isElNode(el_node)) { checkError('전달된 인자는 요소노드여야 합니다.');}
+				if (type(event_type) !== 'string') { checkError('전달된 2번째 인자는 텍스트 유형이어야 합니다.');}
+				if (type(event_handler) !== 'function') { checkError('전달된 3번째 인자는 함수 유형이어야 합니다.');}
+				el_node.removeEventListener(event_type, event_handler, capture);
+			};
+		}
+		// 진보 이벤트 모델 MS IE 6-8
+		else if (global.detachEvent) {
+			_off = function(el_node, event_type, event_handler){
+				// 전달인자 검증
+				if (!isElNode(el_node)) { checkError('전달된 인자는 요소노드여야 합니다.');}
+				if (type(event_type) !== 'string') { checkError('전달된 2번째 인자는 텍스트 유형이어야 합니다.');}
+				if (type(event_handler) !== 'function') { checkError('전달된 3번째 인자는 함수 유형이어야 합니다.');}
+				el_node.detachEvent('on'+event_type, event_handler);
+			};
+		}
+		// 구형 이벤트 모델 
+		else {
+			_off = function(el_node, event_type, event_handler) {
+				// 전달인자 검증
+				if (!isElNode(el_node)) { checkError('전달된 인자는 요소노드여야 합니다.');}
+				if (type(event_type) !== 'string') { checkError('전달된 2번째 인자는 텍스트 유형이어야 합니다.');}
+				if (type(event_handler) !== 'function') { checkError('전달된 3번째 인자는 함수 유형이어야 합니다.');}
+				el_node['on'+event_type] = null;
+			};
+		}
+		return _off;
+	})();
+
 
 global.aiie = {
 
@@ -399,10 +481,15 @@ global.aiie = {
 	'toggleClass': toggleClass,
 	'radioClass': radioClass,
 
+	// 이벤트 제어(구형, 진보 이벤트 모델 모두 지원 업그레이드)
+	'on': on,
+	'off': off,
+
 	// 유틸리티
     'type':         type,    
     'validateData': validateData,
-    'isElNode':     isElNode,    
+    'isElNode':     isElNode, 
+    'checkError': checkError,   
     'each':         each,
     'makeArray':    makeArray,
 	'removeUnit': removeUnit,
