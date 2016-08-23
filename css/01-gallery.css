@@ -1,0 +1,19 @@
+/*! 01-gallery.css */
+
+body {margin:0;padding:0;background-color:#f4f4f4;body font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Source Sans Pro", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, Verdana, Arial, Dotum, sans-serif; font-size: 14px; line-height: 1.5; color: #4d5256; font-weight: 400; -webkit-font-smoothing: antialiased; word-break: keep-all; }
+.wrap {margin:0;padding:0;width:900px;margin:30px auto 0;}
+.h_tit {margin:0;padding:0;text-align:left;font-weight:400;font-size:42px;line-height:42px;}
+.h_txt {margin:15px 0 0;padding:0;}
+
+/* gallery */
+.gallery {margin:15px 0 0;padding:0;position:relative;width:900px;height:550px;}
+.gallery-controls {overflow:hidden;width:900px;margin:0;padding:0;position:absolute;bottom:0;left:0;}
+.gallery-controls .inner {width:910px;}
+.gallery-controls:after {display:block;content:"";clear:both;}
+.gallery-control-btn {display:block;float:left;width:174px;height:88px;margin:0 7px 0 0;padding:0;background:none;border:1px solid gray;outline:none;}
+.gallery-control-btn img {display:inline-block;margin:0;padding:0;border:0;}
+.gallery-control-btn.active {border:1px solid green;}
+.gallery-view {}
+.gallery-view img {}
+
+
