@@ -142,6 +142,7 @@
 	}
 
 	// prevEl
+	
 	var prevEl = (function(){
 		var _prevEl;
 		if ( 'previousElementSibling' in HTMLElement.prototype ) {
@@ -460,8 +461,8 @@ global.aiie = {
 	'queryAll': queryAll,
 
 	// 문서객체 탐색
-	'parentEl': parentEl,
-	'prevEl': prevEl,
+	//'parentEl': parentEl,
+	//'prevEl': prevEl,
 	'nextEl': nextEl,
 	'firstEl': firstEl,
 	'lastEl': lastEl,

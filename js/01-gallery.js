@@ -16,12 +16,13 @@
 	     }
 		if ( type === 'click') {
 			var img, g_img_alt, g_img_src;
-			img = this.firstElementChild;
-			g_img_src = img.getAttribute('src').replace(/-thumb/,'');
-			g_img_alt = img.getAttribute('alt');
-			gallery_view_img.setAttribute('src', g_img_src);
-			gallery_view_img.setAttribute('alt', g_img_alt);
-
+			img = $.firstEl(this);
+			g_img_src = $.attr(img, 'src').replace(/-thumb/,'');
+			g_img_alt = $.attr(img, 'alt');
+			$.attr(gallery_view_img, {
+				'src': g_img_src,
+				'alt': g_img_alt
+			});
 			$.radioClass(this,'active');
 		}
 	}
@@ -32,28 +33,6 @@
 		btn = gallery_btns[i];
 		$.on(btn, 'click', clickBtn);
 	}
-
-	// 클릭 이벤트 바인딩
-	/*
-	for (var btn, i=0, l=gallery_btns.length;i<l;i++){
-		btn = gallery_btns[i];
-		btn.onclick = function(ev) {
-			ev = ev || global.event;
-     		ev.target = ev.target || ev.srcElement;
-     		if (!ev.preventDefault) {
-		      ev.preventDefault = function() {
-		        ev.returnValue = false;
-		      }
-		     }
-			var img, g_img_alt, g_img_src;
-			img = this.firstElementChild;
-			g_img_src = img.getAttribute('src').replace(/-thumb/,'');
-			g_img_alt = img.getAttribute('alt');
-			gallery_view_img.setAttribute('src', g_img_src);
-			gallery_view_img.setAttribute('alt', g_img_alt);
-
-			$.radioClass(this,'active');
-		}
-	}*/
+	
 
 })(this,this.aiie);
