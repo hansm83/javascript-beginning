@@ -137,7 +137,7 @@
 		depth = depth || 1;
 		do {
 			el = el.parentNode;
-		} while ( el && isElnode(el) && --depth);
+		} while ( el && isElNode(el) && --depth);
 		return el;
 	}
 
@@ -461,8 +461,8 @@ global.aiie = {
 	'queryAll': queryAll,
 
 	// 문서객체 탐색
-	//'parentEl': parentEl,
-	//'prevEl': prevEl,
+	'parentEl': parentEl,
+	'prevEl': prevEl,
 	'nextEl': nextEl,
 	'firstEl': firstEl,
 	'lastEl': lastEl,
