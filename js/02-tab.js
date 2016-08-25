@@ -1,4 +1,4 @@
-/*! 01-tab.js */
+/*! 02-tab.js */
 
 (function(global, $){
 
@@ -27,9 +27,5 @@
 		tab_menu = tab_menus[i];
 		clickMenu(tab_menu, i);				
 	}
-
-	
-
-	
 
 })(this,this.aiie);

@@ -1,22 +1,20 @@
-/*! 02-accordion.css */
+/*! 03-accordion.css */
 
 body {margin:0;padding:0;background-color:#f4f4f4;body font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Source Sans Pro", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, Verdana, Arial, Dotum, sans-serif; font-size: 14px; line-height: 1.5; color: #4d5256; font-weight: 400; -webkit-font-smoothing: antialiased; word-break: keep-all; }
-ul, li {margin:0;padding:0;}
+dl,dt,dd {margin:0;padding:0;}
 a {text-decoration:none;}
 .wrap {margin:0;padding:0;width:900px;margin:30px auto 0;}
 .h_tit {margin:0;padding:0;text-align:left;font-weight:400;font-size:42px;line-height:42px;}
 .h_txt {margin:15px 0 0;padding:0;}
 
 /* tab */
-.tab_container {margin-top:30px;}
-.tab_menu {width:100%;list-style-type:none;}
-.tab_menu:after {display:block;clear:both;content:"";}
-.tab_menu li {display:block;float:left;width:24%;margin-left:-1px;}
-.tab_menu li a {position:relative;display:block;font-size:18px;font-weight:400;color:#333;border:1px solid #999;text-align:center;}
-.tab_menu li.active a{z-index:1;color:blue;border-color:blue;}
-.tab_conts {margin-top:15px;}
-.tab_cont {display:none;}
-.tab_cont.active {display:block;}
+.qna_list {margin-top:30px;border-bottom:1px solid #999;}
+.qna_subject {padding:10px;border:1px solid #999;border-width:1px 1px 0;}
+.qna_subject a {display:block;font-size:16px;color:#333;}
+.qna_subject.active {}
+.qna_subject.active a {color:blue;font-weight:600;}
+.qna_answer {display:none;padding:10px 10px 10px 20px;font-size:14px;color:#666;background-color:#eee;border:1px solid #999;border-width:1px 1px 0;}
+.qna_answer.active {display:block;}
 
 
 
