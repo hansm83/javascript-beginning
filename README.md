@@ -1,5 +1,6 @@
 # javascript-beginning
-javascript basics tutorial 
+javascript basics tutorial
+http://aiie.pe.kr/github/javascript-beginging/index.html
 
 1. DOM-Helper.js 만들기
 2. 01-gallery 만들기 (디벨롭 필요) 
