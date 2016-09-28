@@ -1,6 +1,7 @@
 # javascript-beginning
 javascript basics tutorial<br>
-http://aiie.pe.kr/github/javascript-beginging/index.html
+<a href="http://aiie.pe.kr/github/javascript-beginging/index.html">examples html list</a>
+
 
 <a href="http://aiie.pe.kr/github/javascript-beginging/01-gallery.html">01-gallery.html</a><br>
 <a href="http://aiie.pe.kr/github/javascript-beginging/02-tab.html">02-tab.html</a><br>
