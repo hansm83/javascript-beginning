@@ -1,6 +1,8 @@
 /*! 04-slider.js */
 
 (function(global, $){
+	
+'use strict';
 
 // 문서에서 대상 객체 선택
 var img_slider = $.query('.img_slider');
