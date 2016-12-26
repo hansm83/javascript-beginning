@@ -8,5 +8,5 @@ javascript basics tutorial<br>
 <a href="http://aiie.pe.kr/github/javascript-beginging/03-accordion.html">03-accordion.html</a><br>
 <a href="http://aiie.pe.kr/github/javascript-beginging/04-slider.html">04-slider.html</a><br>
 <a href="http://aiie.pe.kr/github/javascript-beginging/05-fontsize-adjust.html">05-fontsize-adjust.html</a><br>
-<a href="http://aiie.pe.kr/github/javascript-beginging/06-sticky-scroll.html">06-sticky-scroll</a><br>
+<a href="http://aiie.pe.kr/github/javascript-beginging/06-sticky-scroll.html">06-sticky-scroll.html</a><br>
 
