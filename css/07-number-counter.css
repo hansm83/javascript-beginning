@@ -1,0 +1,8 @@
+/*! 04-slider.css */
+
+body {margin:0;padding:0;background-color:#f4f4f4;body font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Source Sans Pro", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, Verdana, Arial, Dotum, sans-serif; font-size: 16px; line-height: 1.5; color: #4d5256; font-weight: 400; -webkit-font-smoothing: antialiased; word-break: keep-all; }
+.wrap {margin:0;padding:0;margin:30px auto 0;text-align:center;}
+.h_tit {margin:0 0 0 10px;padding:0;text-align:left;font-weight:400;font-size:42px;line-height:42px;}
+.txt {margin:10px;}
+.text_number {position:absolute;top:50%;left:50%;margin:-25px 0 0 -50px;width:115px;font-weight:bold;font-size:36px;}
+
